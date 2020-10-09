@@ -9,7 +9,7 @@ public class MoveCamera : MonoBehaviour
     void Update()
     {
         float xAxisValue = Input.GetAxis("Horizontal") * Speed / 100;
-
+        
         transform.position = new Vector3(transform.position.x + xAxisValue, transform.position.y, transform.position.z + 0);
     }
 }
