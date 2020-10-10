@@ -1292,6 +1292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2064763657}
+<<<<<<< HEAD
 --- !u!1001 &565774758
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1361,6 +1362,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65894b47b252dd94f896477252a4af3d, type: 3}
+=======
+>>>>>>> parent of e14fa6b... gpacapté
 --- !u!1 &625031975
 GameObject:
   m_ObjectHideFlags: 0
@@ -3743,7 +3746,11 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+<<<<<<< HEAD
   m_Constraints: 4
+=======
+  m_Constraints: 0
+>>>>>>> parent of e14fa6b... gpacapté
 --- !u!61 &2064763656
 BoxCollider2D:
   m_ObjectHideFlags: 0
