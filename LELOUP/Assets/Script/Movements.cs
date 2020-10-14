@@ -83,5 +83,42 @@ public class Movements : MonoBehaviour
                 anim.SetTrigger("Idle");
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            if (!isStanding)
+            {
+                anim.SetTrigger("4Attack");
+            }
+            else
+            {
+                anim.SetTrigger("Kick");
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            if (!isStanding)
+            {
+                anim.SetTrigger("4Attack");
+            }
+            else
+            {
+                anim.SetTrigger("Punch");
+            }
+        }
     }
+
+    /*private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (Input.GetKeyDown(KeyCode.T))
+            print("TTTTTTETETETETTZTETETETETETETTE");
+        if (collision.gameObject.name.Equals("enemie(Clone)"))
+            print("COLOLOLCOLCOLC");
+        if (collision.gameObject.name.Equals("enemie(Clone)") && (Input.GetKeyDown(KeyCode.R)))
+        {
+            print("YOYOYOYOYO");
+            Destroy(collision.gameObject);
+        }
+    }*/
 }
