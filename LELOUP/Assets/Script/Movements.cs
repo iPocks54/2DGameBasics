@@ -18,18 +18,18 @@ public class Movements : MonoBehaviour
 
         anim = GetComponent<Animator>();
         anim.SetLayerWeight(0, 1);
-   
+
         anim.SetTrigger("Idle");
         //cam = GetComponent<Camera>();
     }
 
     void Update()
     {
-        
+
         if (isStanding)
         {
             isGrounded = Physics2D.OverlapArea(new Vector2(transform.position.x - 0.405f - 0.1302271f, transform.position.y - 0.6625f - 0.00651145f), new Vector2(transform.position.x + 0.405f - 0.1302271f, transform.position.y + 0.6625f - 0.00651145f), groundLayers);
-            
+
             if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
             {
                 GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
@@ -78,13 +78,13 @@ public class Movements : MonoBehaviour
             }
             else
             {
-                GetComponent<BoxCollider2D>().offset = new Vector2(-0.1302271f, -0.00651145f);
-                GetComponent<BoxCollider2D>().size = new Vector2(0.81f, 1.325f);
+                GetComponent<BoxCollider2D>().offset = new Vector2(-0.255556f, -0.04173887f);
+                GetComponent<BoxCollider2D>().size = new Vector2(0.5593423f, 1.209406f);
                 anim.SetTrigger("Idle");
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        /*if (Input.GetKeyDown(KeyCode.R))
         {
             if (!isStanding)
             {
@@ -92,7 +92,7 @@ public class Movements : MonoBehaviour
             }
             else
             {
-                anim.SetTrigger("Kick");
+                anim.SetTrigger("Attack3");
             }
         }
 
@@ -109,7 +109,7 @@ public class Movements : MonoBehaviour
         }
     }
 
-    /*private void OnCollisionStay2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if (Input.GetKeyDown(KeyCode.T))
             print("TTTTTTETETETETTZTETETETETETETTE");
@@ -121,4 +121,5 @@ public class Movements : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }*/
+    }
 }
