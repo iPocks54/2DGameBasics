@@ -25,7 +25,7 @@ public class EnemieSpawner : MonoBehaviour
     void Update()
     {
         pos = player.transform.position;
-        transform.position = new Vector3(pos.x, 0, -10);
+        transform.position = new Vector3(pos.x + offset, -2.55f, -10);
 
         if (Time.time > nextSpawn)
         {
