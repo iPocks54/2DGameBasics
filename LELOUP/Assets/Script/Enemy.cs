@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        currentHealth = maxHealth;    
+        currentHealth = maxHealth;
     }
 
     public void TakeDamage(int damage)
@@ -30,5 +30,15 @@ public class Enemy : MonoBehaviour
         if (score.Length != 0)
             score[0].GetComponent<Score>().score += deathScore;
         Destroy(this.gameObject);
+    }
+
+     void OnEnable()
+    {
+        GameObject[] otherObjects = GameObject.FindGameObjectsWithTag("Enemy");
+
+        foreach (GameObject obj in otherObjects)
+        {  
+                Physics2D.IgnoreCollision(obj.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        }
     }
 }
