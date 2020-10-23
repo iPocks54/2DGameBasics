@@ -7,10 +7,12 @@ public class Movements : MonoBehaviour
 {
     public float moveSpeed;
     public float jumpHeight;
+    public float fourMoveSpeed;
     public Animator anim;
 
     public bool isGrounded;
     public bool isStanding;
+    public bool lookright = true;
     public LayerMask groundLayers;
 
     void Start()
@@ -38,11 +40,13 @@ public class Movements : MonoBehaviour
             else if (Input.GetKey(KeyCode.RightArrow) && isGrounded)
             {
                 GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, 0);
+                transform.localScale = new Vector2(1, 1);
                 anim.Play("Run");
             }
             else if (Input.GetKey(KeyCode.LeftArrow) && isGrounded)
             {
                 GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, 0);
+                transform.localScale = new Vector2(-1, 1);
                 anim.Play("Run");
             }
         }
@@ -56,12 +60,14 @@ public class Movements : MonoBehaviour
             }
             else if (Input.GetKey(KeyCode.RightArrow) && isGrounded)
             {
-                GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, 0);
+                GetComponent<Rigidbody2D>().velocity = new Vector2(fourMoveSpeed, 0);
+                transform.localScale = new Vector2(1, 1);
                 anim.Play("4Run");
             }
             else if (Input.GetKey(KeyCode.LeftArrow) && isGrounded)
             {
-                GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, 0);
+                GetComponent<Rigidbody2D>().velocity = new Vector2(-fourMoveSpeed, 0);
+                transform.localScale = new Vector2(-1, 1);
                 anim.Play("4Run");
             }
 

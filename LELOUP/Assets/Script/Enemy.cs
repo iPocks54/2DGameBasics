@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public int maxHealth = 100;
+    public int deathScore = 0;
     int currentHealth;
 
     void Start()
@@ -25,7 +26,9 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         Debug.Log("Enemy died!");
-
+        GameObject[] score = GameObject.FindGameObjectsWithTag("Score");
+        if (score.Length != 0)
+            score[0].GetComponent<Score>().score += deathScore;
         Destroy(this.gameObject);
     }
 }
