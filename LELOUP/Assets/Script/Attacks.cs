@@ -9,6 +9,11 @@ public class Attacks : MonoBehaviour
     public Transform attackPoint;
     public LayerMask enemyLayers;
 
+    Transform firePoint;
+    Transform direction;
+    public float fireRate = 0;
+    public GameObject bulletSprite;
+
     public float attackRange = 0.5f;
     public int attackDamage = 40;
     public float fourAttackRange = 0.5f;
@@ -19,6 +24,7 @@ public class Attacks : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        firePoint = transform.Find("firePoint");
     }
 
     // Update is called once per frame
@@ -29,6 +35,7 @@ public class Attacks : MonoBehaviour
         {
             Attack();
         }
+
     }
 
     void Attack()
@@ -38,7 +45,7 @@ public class Attacks : MonoBehaviour
 
         if (gameObject.GetComponent<Movements>().gunMode)
         {
-            animator.SetTrigger("PistolShoot");
+            Fire();
         }
         else if (gameObject.GetComponent<Movements>().isStanding)
         {
@@ -65,5 +72,16 @@ public class Attacks : MonoBehaviour
     void ManageBullets()
     {
         bulletNumber.text = "x" + bullet;
+    }
+
+    void Fire()
+    {
+        if (fireRate == 0)
+        {
+            animator.SetTrigger("PistolShoot");
+            GameObject newBullet = Instantiate(bulletSprite, firePoint.position, firePoint.rotation);
+            newBullet.GetComponent<Rigidbody2D>().velocity = transform.localScale.x * transform.right * 20;
+        }
+
     }
 }
