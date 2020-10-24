@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MedievalAI : MonoBehaviour {
     public float speed = 2f;
+    public float stopDistance = 1.2f;
     public bool facingright;
     private float prevX = 0;
     public GameObject target;
@@ -32,7 +33,7 @@ public class MedievalAI : MonoBehaviour {
     }
 
     void Attacks() {
-        if (Mathf.Abs(transform.position.x - pos.x) <= 1.2 && !attacking && attackTimer <= 0) {
+        if (Mathf.Abs(transform.position.x - pos.x) <= stopDistance && !attacking && attackTimer <= 0) {
             attacking = true;
             attackTimer = attackCd;
             animator.Play("Attack1");
