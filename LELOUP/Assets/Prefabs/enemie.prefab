@@ -178,3 +178,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   deathScore: 12
+  loots:
+  - {fileID: 8964604751923708482, guid: 0037e68f3e03ef3419c1c76d662a0a9c, type: 3}

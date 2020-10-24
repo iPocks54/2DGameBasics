@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public int maxHealth = 100;
     public int deathScore = 0;
     int currentHealth;
+    public GameObject[] loots;
 
     void Start()
     {
@@ -25,11 +26,20 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("Enemy died!");
+        if (Random.Range(0, 3) == 2)
+            DropLoot(0);
         GameObject[] score = GameObject.FindGameObjectsWithTag("Score");
         if (score.Length != 0)
             score[0].GetComponent<Score>().score += deathScore;
         Destroy(this.gameObject);
+    }
+
+    void DropLoot(int loot)
+    {
+        print("LOOTING PARTYYYYY");
+        if (!loots[loot])
+            return;
+        Instantiate(loots[loot], transform.position, Quaternion.identity);
     }
 
      void OnEnable()
@@ -39,6 +49,6 @@ public class Enemy : MonoBehaviour
         foreach (GameObject obj in otherObjects)
         {  
                 Physics2D.IgnoreCollision(obj.GetComponent<Collider2D>(), GetComponent<Collider2D>());
-        } 
+        }
     }
 }
