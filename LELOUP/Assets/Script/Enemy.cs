@@ -39,6 +39,6 @@ public class Enemy : MonoBehaviour
         foreach (GameObject obj in otherObjects)
         {  
                 Physics2D.IgnoreCollision(obj.GetComponent<Collider2D>(), GetComponent<Collider2D>());
-        }
+        } 
     }
 }
