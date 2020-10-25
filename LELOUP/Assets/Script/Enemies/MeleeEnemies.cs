@@ -41,7 +41,6 @@ public class MeleeEnemies : MonoBehaviour {
     }
 
     void Attacks() {
-        Debug.Log("Distance = " + Mathf.Abs(transform.position.x - pos.x));
         if (Mathf.Abs(transform.position.x - pos.x) <= stopDistance && !attacking && attackTimer <= 0) {
             attacking = true;
             attackTimer = attackCd;
