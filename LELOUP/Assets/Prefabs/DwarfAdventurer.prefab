@@ -224,9 +224,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  stopDistance: 0.8
+  stopDistance: 0.4
   facingright: 0
-  target: {fileID: 0}
 --- !u!114 &2112918736
 MonoBehaviour:
   m_ObjectHideFlags: 0

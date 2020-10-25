@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MedievalAI : MonoBehaviour {
+public class MeleeEnemies : MonoBehaviour {
     public float speed = 2f;
-    public float stopDistance = 1.2f;
+    public float stopDistance;
     public bool facingright;
     private float prevX = 0;
-    public GameObject target;
     private Vector3 pos;
     private Animator animator;
     private GameObject player;

@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 6148074709420835266}
   - component: {fileID: 5581034378184502572}
   m_Layer: 10
-  m_Name: HumanEnemy
+  m_Name: HumanSwordsman
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -238,5 +238,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.6
+  stopDistance: 0.5
   facingright: 0
-  target: {fileID: 0}
