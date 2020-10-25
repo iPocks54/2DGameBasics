@@ -10,7 +10,6 @@ public class Attacks : MonoBehaviour
     public LayerMask enemyLayers;
 
     Transform firePoint;
-    Transform direction;
     public float fireRate = 0;
     public GameObject bulletSprite;
 
@@ -84,6 +83,7 @@ public class Attacks : MonoBehaviour
             bullet -= 1;
             GameObject newBullet = Instantiate(bulletSprite, firePoint.position, firePoint.rotation);
             newBullet.GetComponent<Rigidbody2D>().velocity = transform.localScale.x * transform.right * 20;
+       
         }
 
     }

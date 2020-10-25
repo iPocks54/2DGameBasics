@@ -146,3 +146,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 150
   lifeTime: 5
+  gunShot: {fileID: 3062356376177245781, guid: 2c86f79fc86b94948918bb110b2a4344, type: 3}
