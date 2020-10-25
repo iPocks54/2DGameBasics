@@ -21,6 +21,8 @@ public class Attacks : MonoBehaviour
     public int bullet = 0;
     public Text bulletNumber;
 
+    public int attackBonus = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,21 +46,18 @@ public class Attacks : MonoBehaviour
         int attDmg = 0;
 
         if (gameObject.GetComponent<Movements>().gunMode)
-        {
-            //animator.SetTrigger("PistolShoot");
             Fire();
-        }
         else if (gameObject.GetComponent<Movements>().isStanding)
         {
             animator.SetTrigger("Attack3");
             attRange = attackRange;
-            attDmg = attackDamage;
+            attDmg = attackDamage + attackBonus;
         }
         else
         {
             animator.SetTrigger("4Attack");
             attRange = fourAttackRange;
-            attDmg = fourAttackDamage;
+            attDmg = fourAttackDamage + attackBonus;
         }
 
 
@@ -77,10 +76,12 @@ public class Attacks : MonoBehaviour
 
     void Fire()
     {
+        if (bullet == 0)
+            return;
         if (fireRate == 0)
         {
-            print("WA FWAF WAF WAF");
             animator.SetTrigger("PistolShoot");
+            bullet -= 1;
             GameObject newBullet = Instantiate(bulletSprite, firePoint.position, firePoint.rotation);
             newBullet.GetComponent<Rigidbody2D>().velocity = transform.localScale.x * transform.right * 20;
         }

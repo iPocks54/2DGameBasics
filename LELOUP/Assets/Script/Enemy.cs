@@ -28,15 +28,17 @@ public class Enemy : MonoBehaviour
     {
         if (Random.Range(0, 3) == 2)
             DropLoot(0);
+        if (Random.Range(0, 5) == 1)
+            DropLoot(1);
         GameObject[] score = GameObject.FindGameObjectsWithTag("Score");
         if (score.Length != 0)
             score[0].GetComponent<Score>().score += deathScore;
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 
     void DropLoot(int loot)
     {
-        if (!loots[loot])
+        if (loots.Length <= loot || !loots[loot])
             return;
         Instantiate(loots[loot], transform.position, Quaternion.identity);
     }

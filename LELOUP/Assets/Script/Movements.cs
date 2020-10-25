@@ -74,7 +74,7 @@ public class Movements : MonoBehaviour
         }
     }
 
-    void moveStanding(string mode)
+    /*void moveStanding(string mode)
     {
         isGrounded = Physics2D.OverlapArea(new Vector2(transform.position.x - 0.405f - 0.1302271f, transform.position.y - 0.6625f - 0.00651145f), new Vector2(transform.position.x + 0.405f - 0.1302271f, transform.position.y + 0.6625f - 0.00651145f), groundLayers);
 
@@ -95,39 +95,42 @@ public class Movements : MonoBehaviour
             transform.localScale = new Vector2(-1, 1);
             anim.Play(mode + "Run");
         }
-    }
+    }*/
 
-    /*void moveStanding(string mode)
+    void moveStanding(string mode)
     {
         float inputX = Input.GetAxis("Horizontal");
-        float inputY = Input.GetAxis("Vertical");
-        Vector3 movement = new Vector3(moveSpeed * inputX, 100 * inputY, 0);
+        Vector3 movement = new Vector3(moveSpeed * inputX, 0, 0);
         isGrounded = Physics2D.OverlapArea(new Vector2(transform.position.x - 0.405f - 0.1302271f, transform.position.y - 0.6625f - 0.00651145f), new Vector2(transform.position.x + 0.405f - 0.1302271f, transform.position.y + 0.6625f - 0.00651145f), groundLayers);
-
-        if (isGrounded)
+        
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
-                anim.Play(mode + "Jump");
-            }
-            else if (Input.GetKey(KeyCode.RightArrow))
-            {
-                transform.localScale = new Vector2(1, 1);
-                anim.Play(mode + "Run");
-            }
-            else if (Input.GetKey(KeyCode.LeftArrow))
-            {
-                transform.localScale = new Vector2(-1, 1);
-                anim.Play(mode + "Run");
-            }
+            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
+            anim.Play(mode + "Jump");
+        }
+        else if (Input.GetKey(KeyCode.RightArrow) && isGrounded)
+        {
+            transform.localScale = new Vector2(1, 1);
+            anim.Play(mode + "Run");
+                /*if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
+                    anim.Play(mode + "Jump");
+                }*/
+        }
+        else if (Input.GetKey(KeyCode.LeftArrow) && isGrounded)
+        {
+            transform.localScale = new Vector2(-1, 1);
+            anim.Play(mode + "Run");
+        }
             movement *= Time.deltaTime;
             transform.Translate(movement);
-        }
-    }*/
+    }
 
     void moveFour()
     {
+        float inputX = Input.GetAxis("Horizontal");
+        Vector3 movement = new Vector3(moveSpeed * inputX, 0, 0);
         isGrounded = Physics2D.OverlapArea(new Vector2(transform.position.x - (0.605f - 0.07139975f), transform.position.y - (0.284f + 0.3625833f)), new Vector2(transform.position.x + 0.6625f + 0.1194419f, transform.position.y + 0.405f - 0.2322474f), groundLayers);
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
@@ -136,16 +139,16 @@ public class Movements : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.RightArrow) && isGrounded)
         {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(fourMoveSpeed, 0);
             transform.localScale = new Vector2(1, 1);
             anim.Play("4Run");
         }
         else if (Input.GetKey(KeyCode.LeftArrow) && isGrounded)
         {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(-fourMoveSpeed, 0);
             transform.localScale = new Vector2(-1, 1);
             anim.Play("4Run");
         }
+        movement *= Time.deltaTime;
+        transform.Translate(movement);
     }
 
     void moveGun()

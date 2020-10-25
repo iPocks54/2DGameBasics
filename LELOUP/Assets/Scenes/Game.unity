@@ -1559,7 +1559,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 9, y: -15}
+  m_AnchoredPosition: {x: 5.600006, y: -15}
   m_SizeDelta: {x: 76.65527, y: 30}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &556714738
@@ -1656,6 +1656,18 @@ PrefabInstance:
       propertyPath: spawnRate
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8529706972342528422, guid: 65894b47b252dd94f896477252a4af3d, type: 3}
+      propertyPath: enemy1
+      value: 
+      objectReference: {fileID: 6148074709420835269, guid: 935aa95805417d945b90a25f15562d9f, type: 3}
+    - target: {fileID: 8529706972342528422, guid: 65894b47b252dd94f896477252a4af3d, type: 3}
+      propertyPath: enemy2
+      value: 
+      objectReference: {fileID: 2646068571145310294, guid: 0b531ed5c835b4544a6ebff279f65907, type: 3}
+    - target: {fileID: 8529706972342528422, guid: 65894b47b252dd94f896477252a4af3d, type: 3}
+      propertyPath: enemy3
+      value: 
+      objectReference: {fileID: 735413555761171159, guid: 1f98dd081a149cd4d937012defe9dfc1, type: 3}
     - target: {fileID: 8529706972342528423, guid: 65894b47b252dd94f896477252a4af3d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15
@@ -2665,13 +2677,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   fireRate: 0
-  bulletSprite: {fileID: 6137559529524235757, guid: c8a33dad7f711104889b94ee22ffa35e, type: 3}
+  bulletSprite: {fileID: 8900092931525779006, guid: 7199695f9c245074c94da8c4a35cd8bf, type: 3}
   attackRange: 0.4
-  attackDamage: 100
+  attackDamage: 80
   fourAttackRange: 0.5
   fourAttackDamage: 34
-  bullet: 0
+  bullet: 100
   bulletNumber: {fileID: 556714739}
+  attackBonus: 0
 --- !u!1 &1232567207
 GameObject:
   m_ObjectHideFlags: 0
@@ -4403,6 +4416,18 @@ PrefabInstance:
       propertyPath: spawnRate
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8529706972342528422, guid: 65894b47b252dd94f896477252a4af3d, type: 3}
+      propertyPath: enemy1
+      value: 
+      objectReference: {fileID: 6148074709420835269, guid: 935aa95805417d945b90a25f15562d9f, type: 3}
+    - target: {fileID: 8529706972342528422, guid: 65894b47b252dd94f896477252a4af3d, type: 3}
+      propertyPath: enemy3
+      value: 
+      objectReference: {fileID: 735413555761171159, guid: 1f98dd081a149cd4d937012defe9dfc1, type: 3}
+    - target: {fileID: 8529706972342528422, guid: 65894b47b252dd94f896477252a4af3d, type: 3}
+      propertyPath: enemy2
+      value: 
+      objectReference: {fileID: 2646068571145310294, guid: 0b531ed5c835b4544a6ebff279f65907, type: 3}
     - target: {fileID: 8529706972342528423, guid: 65894b47b252dd94f896477252a4af3d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15.18
