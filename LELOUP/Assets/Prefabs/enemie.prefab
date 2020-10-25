@@ -179,4 +179,4 @@ MonoBehaviour:
   maxHealth: 100
   deathScore: 12
   loots:
-  - {fileID: 8964604751923708482, guid: 0037e68f3e03ef3419c1c76d662a0a9c, type: 3}
+  - {fileID: 2409662498049345427, guid: 089463276f290d147807864d94e1a93f, type: 3}

@@ -45,6 +45,7 @@ public class Attacks : MonoBehaviour
 
         if (gameObject.GetComponent<Movements>().gunMode)
         {
+            //animator.SetTrigger("PistolShoot");
             Fire();
         }
         else if (gameObject.GetComponent<Movements>().isStanding)
@@ -78,6 +79,7 @@ public class Attacks : MonoBehaviour
     {
         if (fireRate == 0)
         {
+            print("WA FWAF WAF WAF");
             animator.SetTrigger("PistolShoot");
             GameObject newBullet = Instantiate(bulletSprite, firePoint.position, firePoint.rotation);
             newBullet.GetComponent<Rigidbody2D>().velocity = transform.localScale.x * transform.right * 20;

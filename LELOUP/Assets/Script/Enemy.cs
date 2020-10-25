@@ -36,7 +36,6 @@ public class Enemy : MonoBehaviour
 
     void DropLoot(int loot)
     {
-        print("LOOTING PARTYYYYY");
         if (!loots[loot])
             return;
         Instantiate(loots[loot], transform.position, Quaternion.identity);
