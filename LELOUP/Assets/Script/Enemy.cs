@@ -30,6 +30,8 @@ public class Enemy : MonoBehaviour
             DropLoot(0);
         if (Random.Range(0, 5) == 1)
             DropLoot(1);
+        if (Random.Range(0, 6) == 2)
+            DropLoot(2);
         GameObject[] score = GameObject.FindGameObjectsWithTag("Score");
         if (score.Length != 0)
             score[0].GetComponent<Score>().score += deathScore;

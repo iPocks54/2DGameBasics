@@ -180,3 +180,5 @@ MonoBehaviour:
   deathScore: 12
   loots:
   - {fileID: 2409662498049345427, guid: 089463276f290d147807864d94e1a93f, type: 3}
+  - {fileID: 7316305826067687753, guid: a377a155d8be1ef43b323cfa78665fb3, type: 3}
+  - {fileID: 7170673242137728693, guid: 30ec7816abfbebf49b13ac9b8b70416d, type: 3}
