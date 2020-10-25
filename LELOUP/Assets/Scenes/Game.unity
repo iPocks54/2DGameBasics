@@ -2523,7 +2523,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4385863451500172, guid: 48f2a8c5ebc0a154f9c0198a2eac1a05, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.85
+      value: -2.912
       objectReference: {fileID: 0}
     - target: {fileID: 4385863451500172, guid: 48f2a8c5ebc0a154f9c0198a2eac1a05, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4520,5 +4520,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: bullet
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2398970643036022913, guid: 0037e68f3e03ef3419c1c76d662a0a9c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0037e68f3e03ef3419c1c76d662a0a9c, type: 3}
