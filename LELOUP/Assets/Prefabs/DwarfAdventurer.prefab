@@ -224,8 +224,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  stopDistance: 0.4
+  stopDistance: 0.57
   facingright: 0
+  attackCd: 0.8
 --- !u!114 &2112918736
 MonoBehaviour:
   m_ObjectHideFlags: 0

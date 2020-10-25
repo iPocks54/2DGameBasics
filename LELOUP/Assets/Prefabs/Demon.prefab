@@ -226,6 +226,7 @@ MonoBehaviour:
   speed: 1
   stopDistance: 1
   facingright: 0
+  attackCd: 1.5
 --- !u!114 &9046132382755258295
 MonoBehaviour:
   m_ObjectHideFlags: 0

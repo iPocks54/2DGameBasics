@@ -64,7 +64,8 @@ public class Attacks : MonoBehaviour
         foreach (Collider2D enemy in hitEnemies)
         {
             Debug.Log("We hit " + enemy.name);
-            enemy.GetComponent<Enemy>().TakeDamage(attDmg);
+            if(enemy.CompareTag("Enemy"))
+                enemy.GetComponent<Enemy>().TakeDamage(attDmg);
         }
     }
 

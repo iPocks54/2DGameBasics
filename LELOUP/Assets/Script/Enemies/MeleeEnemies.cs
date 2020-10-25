@@ -13,17 +13,26 @@ public class MeleeEnemies : MonoBehaviour {
     private bool attacking;
     private BoxCollider2D box;
     private float attackTimer = 0;
-    private float attackCd = 0.8f; 
+    public float attackCd = 0.8f;
+    private Transform playerCenter;
+    private Movements movements;
+    private float originalRange;
     void Start() {
         player = GameObject.FindGameObjectWithTag("Player");
+        movements = player.GetComponent<Movements>();
+        playerCenter = player.transform.Find("Center");
         pos = player.transform.position;
         animator = GetComponent<Animator>();
         attacking = false;
+        originalRange = stopDistance;
     }
 
     void Update() {
-
-        pos = player.transform.position;
+        if (movements.isStanding)
+            stopDistance = originalRange;
+        else
+            stopDistance = originalRange + 0.21f;
+        pos = playerCenter.position;
 
         HandleMovement();
         HandleRotation();
@@ -32,11 +41,12 @@ public class MeleeEnemies : MonoBehaviour {
     }
 
     void Attacks() {
+        Debug.Log("Distance = " + Mathf.Abs(transform.position.x - pos.x));
         if (Mathf.Abs(transform.position.x - pos.x) <= stopDistance && !attacking && attackTimer <= 0) {
             attacking = true;
             attackTimer = attackCd;
             animator.Play("Attack1");
-        } 
+        }
         if (attacking) {
             if (attackTimer > 0)
                 attackTimer -= Time.deltaTime;
