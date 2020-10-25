@@ -81,8 +81,8 @@ public class EnemieSpawner : MonoBehaviour
         if (Time.time > nextSpawn1)
         {
             nextSpawn1 = Time.time + spawnRate1;
-            randX = Random.Range(pos.x + offset, pos.x + (offset * 2));
-            posSpawn = new Vector2(randX * right, enemy1.transform.position.y);
+            randX = Random.Range(pos.x + offset * right, pos.x + (offset * right * 2));
+            posSpawn = new Vector2(randX, enemy1.transform.position.y);
             Instantiate(enemy1, posSpawn, Quaternion.identity);
         }
     }
@@ -92,7 +92,7 @@ public class EnemieSpawner : MonoBehaviour
         if (spawnRate2 > 7)
             spawnRate2 = baseSpawnRate2 - (score / 3000);
 
-        if (Time.time > nextSpawn2 && score > 250)
+        if (Time.time > nextSpawn2 && score > 100)
         {
             nextSpawn2 = Time.time + spawnRate2;
             randX = Random.Range(pos.x + offset, pos.x + (offset * 2));
@@ -106,7 +106,7 @@ public class EnemieSpawner : MonoBehaviour
         if (spawnRate3 > 10)
             spawnRate3 = baseSpawnRate3 - (score /2500);
 
-        if (Time.time > nextSpawn3 && score > 1000)
+        if (Time.time > nextSpawn3 && score > 500)
         {
             nextSpawn3 = Time.time + spawnRate3;
             randX = Random.Range(pos.x + offset, pos.x + (offset * 2));
@@ -120,7 +120,7 @@ public class EnemieSpawner : MonoBehaviour
         if (spawnRate4 > 10)
             spawnRate4 = baseSpawnRate4 - (score / 3500);
 
-        if (Time.time > nextSpawn4 && score > 600)
+        if (Time.time > nextSpawn4 && score > 250)
         {
             nextSpawn4 = Time.time + spawnRate4;
             randX = Random.Range(pos.x + offset, pos.x + (offset * 2));

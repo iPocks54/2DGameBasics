@@ -4,6 +4,7 @@ using UnityEngine;
 using Unity.Mathematics;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class Movements : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class Movements : MonoBehaviour
     public bool gun = false;
     public bool lookright = true;
     public LayerMask groundLayers;
-    public Text healthtext;
+    public TMP_Text healthtext;
     public int health = 100;
 
     void Start()
@@ -28,6 +29,8 @@ public class Movements : MonoBehaviour
         anim.SetLayerWeight(0, 1);
 
         anim.SetTrigger("Idle");
+
+        //healthtext = GetComponent<TMP_Text>();
     }
 
     void Update()

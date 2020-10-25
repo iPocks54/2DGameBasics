@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Score : MonoBehaviour
 {
     public float score = 0;
-    private Text textscore;
-    // Start is called before the first frame update
+    private TMP_Text textscore;
     void Start()
     {
-        textscore = GetComponent<Text>();
+        textscore = GetComponent<TMP_Text>();
     }
 
     // Update is called once per frame

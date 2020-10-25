@@ -11,11 +11,21 @@ public class Enemy : MonoBehaviour
     public int[] lootsProb;
     Transform pos;
     int direction = 1;
+    Rigidbody2D rb;
 
     void Start()
     {
         currentHealth = maxHealth;
         pos = GameObject.FindGameObjectWithTag("Player").transform;
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void Update()
+    {
+        if (transform.position.x - pos.position.x < 5 && transform.position.x - pos.position.x > -5)
+            rb.constraints = RigidbodyConstraints2D.None | RigidbodyConstraints2D.FreezeRotation;
+        else
+            rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
     }
 
     public void TakeDamage(int damage)
