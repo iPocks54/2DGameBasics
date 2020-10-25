@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Mathematics;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Movements : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class Movements : MonoBehaviour
     public bool gun = false;
     public bool lookright = true;
     public LayerMask groundLayers;
+    public Text healthtext;
+    public int health = 100;
 
     void Start()
     {
@@ -44,6 +47,14 @@ public class Movements : MonoBehaviour
         }
         if (!gunMode)
             standToFour();
+        updateHealth();
+    }
+
+    void updateHealth()
+    {
+        healthtext.text = health + "% HP";
+        if (health <= 0)
+            SceneManager.LoadScene(2);
     }
 
     void standToFour()
@@ -149,11 +160,6 @@ public class Movements : MonoBehaviour
         }
         movement *= Time.deltaTime;
         transform.Translate(movement);
-    }
-
-    void moveGun()
-    {
-
     }
 
     void OnTriggerEnter2D(Collider2D hit)

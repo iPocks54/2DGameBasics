@@ -45,7 +45,7 @@ public class EnemieSpawner : MonoBehaviour
         direction[0] = -1;
         direction[1] = 1;
 
-        GameObject text = GameObject.Find("Text");
+        GameObject text = GameObject.Find("Score");
         s = text.GetComponent<Score>();
 
         baseSpawnRate1 = spawnRate1;

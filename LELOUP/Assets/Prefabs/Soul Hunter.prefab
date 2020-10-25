@@ -167,8 +167,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 20
-  deathScore: 15
+  deathScore: 50
   loots: []
+  lootsProb: 
 --- !u!114 &3224552544926408060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,6 +196,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3224552546764505119}
   - component: {fileID: 3224552546764505116}
+  - component: {fileID: 4167531809502596426}
   m_Layer: 10
   m_Name: Hitbox
   m_TagString: Attack
@@ -242,3 +244,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.20718873, y: 0.40341568}
   m_EdgeRadius: 0
+--- !u!114 &4167531809502596426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3224552546764505118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c82209ed5051543b5def8752973f99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 20

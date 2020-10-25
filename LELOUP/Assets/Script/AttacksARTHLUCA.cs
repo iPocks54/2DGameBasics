@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -63,10 +63,9 @@ public class Attacks : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attRange, enemyLayers);
         foreach (Collider2D enemy in hitEnemies)
         {
-            Enemy hitEnemy = enemy.GetComponent<Enemy>();
-            //Debug.Log("We hit " + enemy.name);
-            if (hitEnemy)
-                hitEnemy.TakeDamage(attDmg);
+            Debug.Log("We hit " + enemy.name);
+            if(enemy.CompareTag("Enemy"))
+                enemy.GetComponent<Enemy>().TakeDamage(attDmg);
         }
     }
 
@@ -89,4 +88,4 @@ public class Attacks : MonoBehaviour
         }
 
     }
-}
+}*/

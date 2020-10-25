@@ -202,6 +202,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f7dece2be1914f48a465e06b0284b98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  deathScore: 1000
-  loots: []
+  maxHealth: 300
+  deathScore: 1
+  loots:
+  - {fileID: 7316305826067687753, guid: a377a155d8be1ef43b323cfa78665fb3, type: 3}
+  - {fileID: 7316305826067687753, guid: a377a155d8be1ef43b323cfa78665fb3, type: 3}
+  - {fileID: 7316305826067687753, guid: a377a155d8be1ef43b323cfa78665fb3, type: 3}
+  lootsProb: 040000000400000004000000

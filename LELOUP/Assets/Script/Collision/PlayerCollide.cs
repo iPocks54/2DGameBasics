@@ -21,7 +21,7 @@ public class PlayerCollide : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Attack") && colliderCheck == 0) {
-            Debug.Log("tu té fé hit bouff");
+            //Debug.Log("tu té fé hit bouff");
             colliderCheck += 1;
         }
     }

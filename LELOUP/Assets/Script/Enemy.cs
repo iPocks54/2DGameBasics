@@ -8,17 +8,26 @@ public class Enemy : MonoBehaviour
     public int deathScore = 0;
     int currentHealth;
     public GameObject[] loots;
+    public int[] lootsProb;
+    Transform pos;
+    int direction = 1;
 
     void Start()
     {
         currentHealth = maxHealth;
+        pos = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
+        if (transform.position.x - pos.position.x < 0)
+            direction = -1;
+        else
+            direction = 1;
 
-        if(currentHealth <= 0)
+        currentHealth -= damage;
+        GetComponent<Rigidbody2D>().velocity = new Vector2(5 * direction, 0);
+        if (currentHealth <= 0)
         {
             Die();
         }
@@ -26,11 +35,11 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
-        if (Random.Range(0, 3) == 2)
+        if (Random.Range(0, lootsProb[0]) == 1)
             DropLoot(0);
-        if (Random.Range(0, 5) == 1)
+        if (Random.Range(0, lootsProb[1]) == 1)
             DropLoot(1);
-        if (Random.Range(0, 6) == 2)
+        if (Random.Range(0, lootsProb[2]) == 1)
             DropLoot(2);
         GameObject[] score = GameObject.FindGameObjectsWithTag("Score");
         if (score.Length != 0)
